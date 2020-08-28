@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExpensesTrackingSystem.API.Entities
 {
-    public class Categories
+    public class Currency
     {
         [Key]
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+        public int CurrencyId { get; set; }
+        public string CurrencyName { get; set; }
+        public string CurrencyAbbreviation { get; set; }
     }
 }
