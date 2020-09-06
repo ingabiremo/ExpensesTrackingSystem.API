@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ExpensesTrackingSystem.API.DbContexts;
+using ExpensesTrackingSystem.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,7 @@ namespace ExpensesTrackingSystem.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
             services.AddDbContext<ExpensesTrackingContext>(options =>
             {
                 options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection=True;");

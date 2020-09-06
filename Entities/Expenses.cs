@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ExpensesTrackingSystem.API.Entities
 {
-    public class Expense
+    public class Expenses
     {
        [Key]
         public int ExpenseID { get; set; }

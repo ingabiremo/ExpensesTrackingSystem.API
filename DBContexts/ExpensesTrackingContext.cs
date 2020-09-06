@@ -15,10 +15,10 @@ namespace ExpensesTrackingSystem.API.DbContexts
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Users> Users { get; set; }
 
-        public DbSet<currency> Currency { get; set; }
-        public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Currency> Currency { get; set; }
+        public DbSet<Expenses> Expenses { get; set; }
 
-        public DbSet<Budget> Budget { get; set; }//Periods
+        public DbSet<Budget> Budget { get; set; }
         public DbSet<Periods> Periods { get; set; }
     }
 }
