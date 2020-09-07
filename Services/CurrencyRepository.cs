@@ -21,7 +21,21 @@ namespace ExpensesTrackingSystem.API.Services
         {
               return _context.Currency.ToList<Currency>();
         }
+      public  Currency GetCurrency(int Id)
+        {            
+            return _context.Currency.FirstOrDefault(x => x.Id == Id);
+        }
+        public bool CurrencyExists(int Id)
+        {
+            if (Id.Equals(null))
+            {
+                throw new ArgumentNullException(nameof(Id));
+            }
 
-       
+            return _context.Currency.Any(a => a.Id == Id);
+        }
+
+
+
     }
 }

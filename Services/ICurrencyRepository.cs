@@ -9,5 +9,7 @@ namespace ExpensesTrackingSystem.API.Services
     public interface ICurrencyRepository
     {
         IEnumerable<Currency> GetCurrencies();
+        Currency GetCurrency(int Id);
+        bool CurrencyExists(int Id);
     }
 }

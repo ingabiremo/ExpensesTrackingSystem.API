@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace ExpensesTrackingSystem.API.Controllers
 {
     [ApiController]
+    [Route("api/currency")]
     public class CurrencyController : ControllerBase
     {
 
@@ -19,12 +20,24 @@ namespace ExpensesTrackingSystem.API.Controllers
                 throw new ArgumentNullException(nameof(currencyRepository));
         }
 
-        [HttpGet("api/currency")]
+        [HttpGet()]
         public IActionResult GetCurrencies()
         {
             var currencyList  = _currencyRepository.GetCurrencies();
-            return new JsonResult(currencyList);
+            return Ok(currencyList);
            
+        }
+        [HttpGet("{Id}")]
+        public IActionResult GetCurrency(int Id)
+        {
+            var GetSingleCurrency = _currencyRepository.GetCurrency(Id);
+            
+            if (GetSingleCurrency==null)
+            { 
+                return NotFound();
+            }
+            var singleCurrency = _currencyRepository.GetCurrency(Id);
+            return Ok(singleCurrency);
         }
     }
 }
