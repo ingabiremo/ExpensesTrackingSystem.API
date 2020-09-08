@@ -30,5 +30,6 @@ namespace ExpensesTrackingSystem.API.Entities
         public DateTimeOffset DateIOfBirth { get; set; }
         [ForeignKey("Id")]
         public Currency Currencies { get; set; }
+       
     }
 }

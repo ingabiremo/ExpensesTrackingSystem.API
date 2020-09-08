@@ -34,6 +34,7 @@ namespace ExpensesTrackingSystem.API
             }).AddXmlDataContractSerializerFormatters();
 
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddDbContext<ExpensesTrackingContext>(options =>
             {
                 options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ExpensesDB;Trusted_Connection=True;");
